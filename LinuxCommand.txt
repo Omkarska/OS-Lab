@@ -1,0 +1,63 @@
+Here are some possible Linux commands for your statements:
+
+i. To redirect the output of ls command to a file named outfile, you can use this command 12:
+
+ls > outfile
+ii. To select the lines in a file which has digit as one of the character in that line and redirect the output to the file named list, you can use this command 3:
+
+grep '[0-9]' file > list
+iii. To assign execute permission to owner and remove read permission from other for an ordinary file named test by relative way, you can use this command:
+
+chmod u+x,o-r test
+iv. To create an alias named rm that always deletes file interactively, you can use this command:
+
+alias rm='rm -i'
+v. To count the currently login users to the system, you can use this command:
+
+who | wc -l
+
+i. To redirect the output of cat command to a file named outfile, you can use this syntax: 
+cat thisasan > outfile1. 
+ii. To list all hidden files under current directory and store in “hidden” file, you can use this syntax: ls -a | grep "^\." > hidden2. 
+iii. To assign write permission to owner and remove execute permission from other for an ordinary file named test by absolute way, you can use this syntax: chmod u+w,o-x test. 
+iv. To create soft and hard link for given file, you can use these syntaxes: ln -s source_file soft_link for soft link and ln source_file hard_link for hard link. 
+v. To convert lowercase to upper case of a given file, you can use this syntax: tr '[:lower:]' '[:upper:]' < input_file > output_file. 
+vi. To extract 1st and 10th character of a given file, you can use this syntax: cut -c 1,10 input_file > output_file. 
+vii. To display how many times lines are repeated in a given file, you can use this syntax: sort input_file | uniq -c > output_file.
+
+# i. To redirect the output of cp command to a file named outfile
+cp source destination > outfile
+
+# ii. To select the lines in a file which has 4 letter words in that line and redirect the output to a file named list
+grep -E '\b\w{4}\b' outfile > list
+
+# iii. Assign write permission to owner and remove read permission from group user for an ordinary file named test by relative way
+chmod u+w,g-r test
+
+# iv. Create an alias named ls that always lists all the files including hidden files
+alias ls='ls -a'
+
+# v. Count the number of words in a file
+wc -w filename
+
+# a. Redirect the output of mv command to a file named outfile
+mv source destination > outfile
+
+# b. List all hidden files under current directory and store in “hidden” file
+ls -a . | grep '^\.' > hidden
+
+# c. Assign write permission to group user and remove execute permission from owner for an ordinary file named test by absolute way
+chmod g+w,o-x /path/to/test
+
+# d. To create soft and hard link for given file
+ln -s source softlink # soft link
+ln source hardlink # hard link
+
+# e. To convert lowercase to upper case of a given file
+tr '[:lower:]' '[:upper:]' < inputfile > outputfile
+
+# f. To extract 2nd and 3rd character of a given file
+cut -c 2-3 inputfile > outputfile
+
+# g. To display how many times lines are repeated in a given file
+uniq -c inputfile > outputfile
