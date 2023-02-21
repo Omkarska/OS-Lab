@@ -20,6 +20,7 @@ def main():
 
     running = [True] * processes
     count = processes
+    safe_sequence = [] # Initialize an empty list to keep track of the safe sequence
     while count != 0:
         safe = False
         for i in range(processes):
@@ -34,6 +35,7 @@ def main():
                     running[i] = False
                     count -= 1
                     safe = True
+                    safe_sequence.append(i + 1) # Add the current process to the safe sequence
                     for j in range(resources):
                         available[j] += currently_allocated[i][j]
                     break
@@ -42,6 +44,9 @@ def main():
             break
 
         print(f"the process is in a safe state.\navailable resources : {available}\n")
+
+    if count == 0:
+        print("Safe sequence: ", safe_sequence) # Print the safe sequence
 
 
 if __name__ == '__main__':
